@@ -1,70 +1,318 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <meta name="title" content="SSR: Scaling Surefooted and Symmetric Humanoid Traversal to the Open World">
+  <meta name="description" content="SSR: an efficient end-to-end framework for egocentric vision-based humanoid traversal that achieves safe, coordinated, and human-like locomotion over diverse real-world terrains.">
+  <meta name="keywords" content="humanoid robot, locomotion, traversal, reinforcement learning, computer vision, whole-body control, CoRL 2026">
+  <meta name="author" content="Ruiqi Yu, Yiwen Wang, Yuan Hao, Jun Wu, Qiuguo Zhu">
+  <meta name="robots" content="index, follow">
+  <meta name="language" content="English">
+  
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Zhejiang University">
+  <meta property="og:title" content="SSR: Scaling Surefooted and Symmetric Humanoid Traversal to the Open World">
+  <meta property="og:description" content="SSR: an efficient end-to-end framework for egocentric vision-based humanoid traversal that achieves safe, coordinated, and human-like locomotion over diverse real-world terrains.">
+  <meta property="og:url" content="https://ssr-humanoid.github.io/">
+  <meta property="article:published_time" content="2026-01-01T00:00:00.000Z">
+  <meta property="article:author" content="Ruiqi Yu">
+  <meta property="article:section" content="Research">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="SSR: Scaling Surefooted and Symmetric Humanoid Traversal to the Open World">
+  <meta name="twitter:description" content="SSR: an efficient end-to-end framework for egocentric vision-based humanoid traversal that achieves safe, coordinated, and human-like locomotion over diverse real-world terrains.">
+
+  <meta name="citation_title" content="SSR: Scaling Surefooted and Symmetric Humanoid Traversal to the Open World">
+  <meta name="citation_author" content="Yu, Ruiqi">
+  <meta name="citation_author" content="Wang, Yiwen">
+  <meta name="citation_author" content="Hao, Yuan">
+  <meta name="citation_author" content="Wu, Jun">
+  <meta name="citation_author" content="Zhu, Qiuguo">
+  <meta name="citation_publication_date" content="2026">
+  <meta name="citation_conference_title" content="Conference on Robot Learning (CoRL)">
+  <meta name="citation_pdf_url" content="https://ssr-humanoid.github.io/static/pdfs/paper.pdf">
+  
+  <meta name="theme-color" content="#2563eb">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://ajax.googleapis.com">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+
   <title>SSR: Scaling Surefooted and Symmetric Humanoid Traversal to the Open World</title>
-  <link rel="stylesheet" href="style.css" />
+  
+  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+  <link rel="apple-touch-icon" href="static/images/favicon.ico">
+  
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+  
+  <link rel="preload" href="static/css/bulma-carousel.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="static/css/bulma-slider.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="static/css/fontawesome.all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  
+  <noscript>
+    <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+    <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+    <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  </noscript>
+  
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script defer src="static/js/bulma-carousel.min.js"></script>
+  <script defer src="static/js/bulma-slider.min.js"></script>
+  <script defer src="static/js/index.js"></script>
 </head>
 <body>
-  <header class="hero">
-    <h1>SSR: Scaling Surefooted and Symmetric Humanoid Traversal to the Open World</h1>
-    <p class="authors">
-      Ruiqi Yu<sup>*</sup>, Yiwen Wang<sup>*</sup>, Yuan Hao, Jun Wu, Qiuguo Zhu<sup>†</sup>
-    </p>
-    <p class="affiliations">
-      Zhejiang University
-    </p>
-    <p class="affiliations" style="font-size:0.85rem;color:#888;">
-      <sup>*</sup>Equal contribution &nbsp;&nbsp; <sup>†</sup>Corresponding author
-    </p>
-    <div class="buttons">
-      <a href="files/paper.pdf">Paper</a>
-      <a href="#">arXiv</a>
-      <a href="#">Video</a>
-      <a href="#">Code</a>
-      <a href="files/bibtex.txt">BibTeX</a>
+
+  <button class="scroll-to-top" onclick="scrollToTop()" title="Scroll to top" aria-label="Scroll to top">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <main id="main-content">
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">SSR: Scaling Surefooted and Symmetric Humanoid Traversal to the Open World</h1>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                <a href="#" target="_blank">Ruiqi Yu</a><sup>*</sup>,&nbsp;</span>
+              <span class="author-block">
+                <a href="#" target="_blank">Yiwen Wang</a><sup>*</sup>,&nbsp;</span>
+              <span class="author-block">
+                <a href="#" target="_blank">Yuan Hao</a>,&nbsp;</span>
+              <span class="author-block">
+                <a href="#" target="_blank">Jun Wu</a>,&nbsp;</span>
+              <span class="author-block">
+                <a href="#" target="_blank">Qiuguo Zhu</a><sup>&#8224;</sup></span>
+            </div>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">Zhejiang University &nbsp;|&nbsp; CoRL 2026</span>
+              <span class="eql-cntrb"><small><br><sup>*</sup>Equal Contribution &nbsp;&nbsp; <sup>&#8224;</sup>Corresponding Author</small></span>
+            </div>
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <span class="link-block">
+                  <a href="static/pdfs/paper.pdf" target="_blank"
+                  class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon"><i class="fas fa-file-pdf"></i></span>
+                    <span>Paper</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="#"
+                  class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon"><i class="ai ai-arxiv"></i></span>
+                    <span>arXiv</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="#"
+                  class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon"><i class="fab fa-youtube"></i></span>
+                    <span>Video</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="#"
+                  class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon"><i class="fab fa-github"></i></span>
+                    <span>Code</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="#BibTeX"
+                  class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon"><i class="fas fa-quote-right"></i></span>
+                    <span>BibTeX</span>
+                  </a>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-  </header>
-
-  <section class="section">
-    <h2>Teaser</h2>
-    <img src="assets/teaser.jpg" alt="SSR teaser" class="teaser" />
   </section>
 
-  <section class="section">
-    <h2>Abstract</h2>
-    <p>
-      We present SSR, a perceptive humanoid traversal framework for safe, coordinated,
-      and human-like locomotion over diverse real-world terrains...
-    </p>
-  </section>
 
-  <section class="section">
-    <h2>Method Overview</h2>
-    <img src="assets/fig_overview.png" alt="Method overview" class="figure" />
-    <ul>
-      <li>Predictive dense foothold safety reward</li>
-      <li>Efficient latent symmetry learning</li>
-      <li>Terrain-aware Multi-AMP</li>
-    </ul>
+  <!-- Teaser video -->
+  <section class="hero teaser">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <!-- TODO: Replace banner_video.mp4 with the SSR teaser video -->
+        <video poster="" id="tree" autoplay controls muted loop height="100%" preload="metadata">
+          <source src="static/videos/banner_video.mp4" type="video/mp4">
+        </video>
+        <h2 class="subtitle has-text-centered">
+          SSR scales surefooted and symmetric humanoid traversal to diverse open-world human environments,
+          including grassy slopes, stairs of varying sizes, high platforms, and wide gaps,
+          while maintaining safe foot placement and coordinated, natural whole-body motion.
+        </h2>
+      </div>
+    </div>
   </section>
+  <!-- End teaser video -->
 
-  <section class="section">
-    <h2>Results</h2>
-    <img src="assets/fig_results.png" alt="Results" class="figure" />
+
+  <!-- Paper abstract -->
+  <section class="section hero is-light">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+              Extending humanoid traversal to open-world human environments is essential for real-world
+              deployment, yet remains challenging. The robot must use vision to ensure safe and reliable
+              foot placement on heterogeneous terrain under highly dynamic motion, while producing
+              coordinated, natural whole-body behaviors. We propose SSR, an efficient end-to-end framework
+              for egocentric vision-based humanoid traversal that jointly learns these capabilities. SSR
+              introduces a predictive foothold safety reward that provides dense swing-phase guidance,
+              encouraging earlier commitment to stable footholds to reduce edge slipping. It further employs
+              a compact equivariant latent-space symmetry augmentation to efficiently induce bilateral
+              coordination under high-dimensional visual observations, together with terrain-specific
+              multi-discriminator motion priors that preserve human-like behavior across scenes. Extensive
+              experiments show that SSR transfers safe, stable, and high-quality locomotion to diverse
+              real-world terrains, including stairs with varied structures, and to extreme challenges such
+              as wide gaps and high platforms, while enabling reliable long-horizon traversal in open
+              outdoor environments.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
+  <!-- End paper abstract -->
 
-  <section class="section">
-    <h2>BibTeX</h2>
-    <pre>
-@inproceedings{ssr2026,
+
+  <!-- Image carousel -->
+  <section class="hero is-small">
+    <div class="hero-body">
+      <div class="container">
+        <div id="results-carousel" class="carousel results-carousel">
+          <div class="item">
+            <!-- TODO: Replace with SSR result images -->
+            <img src="static/images/carousel1.jpg" alt="SSR result visualization 1" loading="lazy"/>
+            <h2 class="subtitle has-text-centered"></h2>
+          </div>
+          <div class="item">
+            <img src="static/images/carousel2.jpg" alt="SSR result visualization 2" loading="lazy"/>
+            <h2 class="subtitle has-text-centered"></h2>
+          </div>
+          <div class="item">
+            <img src="static/images/carousel3.jpg" alt="SSR result visualization 3" loading="lazy"/>
+            <h2 class="subtitle has-text-centered"></h2>
+          </div>
+          <div class="item">
+            <img src="static/images/carousel4.jpg" alt="SSR result visualization 4" loading="lazy"/>
+            <h2 class="subtitle has-text-centered"></h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End image carousel -->
+
+
+  <!-- Youtube video -->
+  <section class="hero is-small is-light">
+    <div class="hero-body">
+      <div class="container">
+        <h2 class="title is-3">Video Presentation</h2>
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
+            <div class="publication-video">
+              <!-- TODO: Replace with the SSR YouTube video ID -->
+              <iframe src="https://www.youtube.com/embed/JkaxUblCGz0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End youtube video -->
+
+
+  <!-- Video carousel -->
+  <section class="hero is-small">
+    <div class="hero-body">
+      <div class="container">
+        <h2 class="title is-3">More Results</h2>
+        <div id="results-carousel" class="carousel results-carousel">
+          <div class="item item-video1">
+            <!-- TODO: Replace with SSR result videos -->
+            <video poster="" id="video1" controls muted loop height="100%" preload="metadata">
+              <source src="static/videos/carousel1.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-video2">
+            <video poster="" id="video2" controls muted loop height="100%" preload="metadata">
+              <source src="static/videos/carousel2.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-video3">
+            <video poster="" id="video3" controls muted loop height="100%" preload="metadata">
+              <source src="static/videos/carousel3.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End video carousel -->
+
+
+  <!-- BibTex citation -->
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <div class="bibtex-header">
+        <h2 class="title">BibTeX</h2>
+        <button class="copy-bibtex-btn" onclick="copyBibTeX()" title="Copy BibTeX to clipboard">
+          <i class="fas fa-copy"></i>
+          <span class="copy-text">Copy</span>
+        </button>
+      </div>
+      <pre id="bibtex-code"><code>@inproceedings{ssr2026,
   title={SSR: Scaling Surefooted and Symmetric Humanoid Traversal to the Open World},
-  author={...},
-  booktitle={CoRL},
-  year={2026}
-}
-    </pre>
+  author={Yu, Ruiqi and Wang, Yiwen and Hao, Yuan and Wu, Jun and Zhu, Qiuguo},
+  booktitle={Conference on Robot Learning (CoRL)},
+  year={2026},
+  url={https://ssr-humanoid.github.io/}
+}</code></pre>
+    </div>
   </section>
+  <!-- End BibTex citation -->
+
+
+  <footer class="footer">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+            <p>
+              This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a>,
+              adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+              This website is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+              Commons Attribution-ShareAlike 4.0 International License</a>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  </main>
 </body>
 </html>
