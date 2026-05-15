@@ -1,7 +1,7 @@
 /* Modern CSS Variables for consistent theming */
 :root {
-  --primary-color: #2563eb;
-  --primary-hover: #1d4ed8;
+  --primary-color: #363636;
+  --primary-hover: #1a1a1a;
   --secondary-color: #64748b;
   --accent-color: #0ea5e9;
   --text-primary: #1e293b;
@@ -134,7 +134,7 @@ body {
 }
 
 .footer .icon-link:hover {
-    color: var(--primary-color);
+    color: #000;
     transform: translateY(-2px);
 }
 
@@ -234,7 +234,7 @@ body {
 }
 
 .publication-authors a {
-   color: var(--primary-color) !important;
+   color: hsl(204, 86%, 53%) !important;
    text-decoration: none;
    font-weight: 600;
    transition: var(--transition);
@@ -257,7 +257,8 @@ body {
 }
 
 .publication-authors a:hover {
-    color: var(--primary-hover) !important;
+    color: hsl(204, 86%, 53%) !important;
+    text-decoration: underline;
 }
 
 .author-block {
@@ -352,13 +353,13 @@ body {
 
 /* Pagination and Misc Improvements */
 .slider-pagination .slider-page {
-  background: var(--primary-color);
+  background: #888;
   border-radius: 50%;
   transition: var(--transition);
 }
 
 .slider-pagination .slider-page.is-active {
-  background: var(--primary-hover);
+  background: #363636;
   transform: scale(1.2);
 }
 
@@ -414,13 +415,13 @@ body {
 }
 
 .footer a {
-  color: var(--primary-color);
+  color: #363636;
   text-decoration: none;
   transition: var(--transition);
 }
 
 .footer a:hover {
-  color: var(--primary-hover);
+  color: #000;
   text-decoration: underline;
 }
 
@@ -543,7 +544,7 @@ code {
   transform: translateY(-2px);
   box-shadow: var(--shadow-lg);
   background: var(--background-secondary);
-  border-color: var(--primary-color);
+  border-color: #363636;
 }
 
 .more-works-btn .dropdown-arrow {
@@ -787,7 +788,7 @@ code {
 .button:focus,
 .related-works-btn:focus,
 a:focus {
-  outline: 2px solid var(--primary-color);
+  outline: 2px solid #363636;
   outline-offset: 2px;
 }
 
