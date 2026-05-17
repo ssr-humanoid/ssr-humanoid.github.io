@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
@@ -355,23 +355,56 @@
   <!-- 8. Long-Horizon -->
   <section class="section">
     <div class="container is-max-widescreen" style="max-width:1380px;">
-      <h2 class="title is-3 has-text-centered">Long-Horizon</h2>
-      <div class="columns is-centered is-multiline">
-        <div class="column is-6-tablet is-12-mobile">
+      <h2 class="title is-3 has-text-centered">Long-Horizon Traversal in the Open World</h2>
+      <!-- Row 1: 1 video, no speed control -->
+      <div class="columns is-centered">
+        <div class="column is-8-tablet is-12-mobile">
           <div class="content">
-            <video controls autoplay muted loop playsinline poster="static/images/Loading screen image/longhorizon_hanggang.jpg" style="width:100%; border-radius:10px; border:1px solid #bbb;"><source src="static/videos/longhorizon_hanggang.mp4" type="video/mp4">
+            <video controls autoplay muted loop playsinline poster="static/images/Loading screen image/longhorizon_1.jpg" style="width:100%; border-radius:10px; border:1px solid #bbb;"><source src="static/videos/longhorizon_1.mp4" type="video/mp4">
+            </video>
+            <p style="text-align:center; color:#888; margin-top:0.4rem;">This video has been trimmed and sped up.</p>
+          </div>
+        </div>
+      </div>
+      <!-- Row 2: 3 videos, 4x speed + hover to 1x -->
+      <div class="columns is-centered is-multiline">
+        <div class="column is-4-tablet is-12-mobile">
+          <div class="content">
+            <video controls autoplay muted loop playsinline id="longhorizon_2" onloadstart="this.playbackRate = 4.0;" poster="static/images/Loading screen image/longhorizon_liangzhu.jpg" style="width:100%; border-radius:10px; border:1px solid #bbb;"><source src="static/videos/longhorizon_2.mp4" type="video/mp4">
             </video>
           </div>
         </div>
-        <div class="column is-6-tablet is-12-mobile">
+        <div class="column is-4-tablet is-12-mobile">
           <div class="content">
-            <video controls autoplay muted loop playsinline poster="static/images/Loading screen image/longhorizon_liangzhu.jpg" style="width:100%; border-radius:10px; border:1px solid #bbb;"><source src="static/videos/longhorizon_liangzhu.mp4" type="video/mp4">
+            <video controls autoplay muted loop playsinline id="longhorizon_3" onloadstart="this.playbackRate = 4.0;" poster="static/images/Loading screen image/longhorizon_3.jpg" style="width:100%; border-radius:10px; border:1px solid #bbb;"><source src="static/videos/longhorizon_3.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+        <div class="column is-4-tablet is-12-mobile">
+          <div class="content">
+            <video controls autoplay muted loop playsinline id="longhorizon_4" onloadstart="this.playbackRate = 4.0;" poster="static/images/Loading screen image/longhorizon_4.jpg" style="width:100%; border-radius:10px; border:1px solid #bbb;"><source src="static/videos/longhorizon_4.mp4" type="video/mp4">
             </video>
           </div>
         </div>
       </div>
+      <div class="columns is-centered has-text-centered">
+        <div class="content has-text-justified">
+          <p>The clips above highlight close-up details of open-world traversal. Hover over a clip to play it at 1× speed.</p>
+        </div>
+      </div>
     </div>
   </section>
+  <script>
+    const longhorizon_2 = document.getElementById('longhorizon_2');
+    longhorizon_2.addEventListener('mouseenter', function() { this.playbackRate = 1.0; });
+    longhorizon_2.addEventListener('mouseleave', function() { this.playbackRate = 4.0; });
+    const longhorizon_3 = document.getElementById('longhorizon_3');
+    longhorizon_3.addEventListener('mouseenter', function() { this.playbackRate = 1.0; });
+    longhorizon_3.addEventListener('mouseleave', function() { this.playbackRate = 4.0; });
+    const longhorizon_4 = document.getElementById('longhorizon_4');
+    longhorizon_4.addEventListener('mouseenter', function() { this.playbackRate = 1.0; });
+    longhorizon_4.addEventListener('mouseleave', function() { this.playbackRate = 4.0; });
+  </script>
 
   <!-- 9. Cross-Platform Transfer -->
   <section class="section">
@@ -464,7 +497,7 @@
           <div class="content">
             <p>
               This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a>,
-              adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+              which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page, with additional design inspiration from <a href="https://project-instinct.github.io/hiking-in-the-wild/" target="_blank">Hiking in the Wild</a>.
               This website is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
               Commons Attribution-ShareAlike 4.0 International License</a>.
             </p>
