@@ -61,7 +61,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   </noscript>
   
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
   
   <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script defer src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
@@ -83,14 +83,14 @@
       <source src="static/videos/preview.mp4" type="video/mp4">
     </video>
     <div class="video-hero-overlay"></div>
-    <div class="video-hero-content" style="transform: translateY(1.6rem);">
+    <div class="video-hero-content" style="transform: translateY(-0.2rem);">
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <h1 class="publication-title" style="color:#fff; text-shadow: 0 2px 8px rgba(0,0,0,0.7); line-height: 1.2;">
-              <span style="display:block; font-size: 8rem; font-weight: 800; letter-spacing: 0.05em;">SSR</span>
-              <span style="display:block; font-size: 4.2rem; font-weight: 600; margin-top: 0.1em; white-space: nowrap;">Scaling Surefooted and Symmetric</span>
-              <span style="display:block; font-size: 4.2rem; font-weight: 600; margin-top: 0.1em; white-space: nowrap;">Humanoid Traversal to the Open World</span>
+            <h1 class="publication-title" style="color:#fff; line-height: 1.2;">
+              <span style="display:block; font-size: 14rem; font-weight: 1000; letter-spacing: 0.05em; opacity: 0.85;">SSR</span>
+              <span style="display:block; font-size: 4.4rem; font-weight: 400; margin-top: 0.5em; white-space: nowrap; opacity: 0.85;">Scaling Surefooted and Symmetric</span>
+              <span style="display:block; font-size: 4.4rem; font-weight: 400; margin-top: 0.25em; white-space: nowrap; opacity: 0.85;">Humanoid Traversal to the Open World</span>
             </h1>
           </div>
         </div>
@@ -198,10 +198,10 @@
 
   <!-- Video sections -->
 
-  <!-- 1. Varied Stair Structures -->
+  <!-- 1. Stair: Varied Structures -->
   <section class="section">
     <div class="container is-max-widescreen" style="max-width:1380px;">
-      <h2 class="title is-3 has-text-centered">Varied Stair Structures</h2>
+      <h2 class="title is-3 has-text-centered">Stair: Varied Structures</h2>
       <div class="columns is-centered is-multiline">
         <div class="column is-6-tablet is-12-mobile">
           <div class="content">
@@ -230,16 +230,16 @@
       </div>
       <div class="columns is-centered has-text-centered">
         <div class="content">
-          <p>SSR stably traverses diverse stair structures, including open-riser, and spiral stairs.</p>
+          <p>SSR stably traverses diverse stair structures, including narrow open-riser, and spiral stairs.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 2. High Platform -->
+  <!-- 2. High Platforms -->
   <section class="section">
     <div class="container is-max-widescreen" style="max-width:1380px;">
-      <h2 class="title is-3 has-text-centered">High Platform</h2>
+      <h2 class="title is-3 has-text-centered">High Platforms</h2>
       <div class="columns is-centered is-multiline">
         <div class="column is-6-tablet is-12-mobile">
           <div class="content">
@@ -269,10 +269,10 @@
     </div>
   </section>
 
-  <!-- 3. Gap -->
+  <!-- 3. Gaps -->
   <section class="section">
     <div class="container is-max-widescreen" style="max-width:1380px;">
-      <h2 class="title is-3 has-text-centered">Gap</h2>
+      <h2 class="title is-3 has-text-centered">Gaps</h2>
       <div class="columns is-centered is-multiline">
         <div class="column is-6-tablet is-12-mobile">
           <div class="content">
@@ -314,16 +314,18 @@
   <!-- 5. Perturbation Robustness Test -->
   <section class="section">
     <div class="container is-max-widescreen" style="max-width:1380px;">
-      <h2 class="title is-3 has-text-centered">Perturbation Robustness Test</h2>
+      <h2 class="title is-3 has-text-centered" style="margin-bottom: 0.5rem !important;">Perturbation Robustness Test</h2>
       <div class="columns is-centered is-multiline">
         <div class="column is-6-tablet is-12-mobile">
           <div class="content">
+            <p style="text-align:center; font-weight:600; font-size:1.5rem; margin-bottom:0.8rem;">Stair Push Recovery</p>
             <video controls autoplay muted loop playsinline poster="static/images/Loading screen image/robustness_disturbance_1.jpg" style="width:100%; border-radius:10px; border:1px solid #bbb;"><source src="static/videos/robustness_disturbance_1.mp4" type="video/mp4">
             </video>
           </div>
         </div>
         <div class="column is-6-tablet is-12-mobile">
           <div class="content">
+            <p style="text-align:center; font-weight:600; font-size:1.5rem; margin-bottom:0.8rem;">Trolley Disturbance Rejection</p>
             <video controls autoplay muted loop playsinline poster="static/images/Loading screen image/robustness_disturbance_2.jpg" style="width:100%; border-radius:10px; border:1px solid #bbb;"><source src="static/videos/robustness_disturbance_2.mp4" type="video/mp4">
             </video>
           </div>
@@ -335,22 +337,25 @@
   <!-- 7. Out-of-Distribution Generalization -->
   <section class="section">
     <div class="container is-max-widescreen" style="max-width:1380px;">
-      <h2 class="title is-3 has-text-centered">Out-of-Distribution Generalization</h2>
+      <h2 class="title is-3 has-text-centered" style="margin-bottom: 0.5rem !important;">Out-of-Distribution Generalization</h2>
       <div class="columns is-centered">
         <div class="column is-4-tablet is-12-mobile">
           <div class="content">
+            <p style="text-align:center; font-weight:600; font-size:1.5rem; margin-bottom:0.8rem;">Slippery Trolley</p>
             <video controls autoplay muted loop playsinline poster="static/images/Loading screen image/ood_1.jpg" style="width:100%; border-radius:10px; border:1px solid #bbb;"><source src="static/videos/ood_1.mp4" type="video/mp4">
             </video>
           </div>
         </div>
         <div class="column is-4-tablet is-12-mobile">
           <div class="content">
+            <p style="text-align:center; font-weight:600; font-size:1.5rem; margin-bottom:0.8rem;">Perforated Grids</p>
             <video controls autoplay muted loop playsinline poster="static/images/Loading screen image/ood_2.jpg" style="width:100%; border-radius:10px; border:1px solid #bbb;"><source src="static/videos/ood_2.mp4" type="video/mp4">
             </video>
           </div>
         </div>
         <div class="column is-4-tablet is-12-mobile">
           <div class="content">
+            <p style="text-align:center; font-weight:600; font-size:1.5rem; margin-bottom:0.8rem;">Movable Pallets</p>
             <video controls autoplay muted loop playsinline poster="static/images/Loading screen image/ood_3.jpg" style="width:100%; border-radius:10px; border:1px solid #bbb;"><source src="static/videos/ood_3.mp4" type="video/mp4">
             </video>
           </div>
@@ -456,14 +461,14 @@
               Extending humanoid traversal to open-world human environments is essential for real-world
               deployment, yet remains challenging. The robot must use vision to ensure safe and reliable
               foot placement on heterogeneous terrain under highly dynamic motion, while producing
-              coordinated, natural whole-body behaviors. We propose SSR, an efficient end-to-end framework
-              for egocentric vision-based humanoid traversal that jointly learns these capabilities. SSR
-              introduces a predictive foothold safety reward that provides dense swing-phase guidance,
-              encouraging earlier commitment to stable footholds to reduce edge slipping. It further employs
-              a compact equivariant latent-space symmetry augmentation to efficiently induce bilateral
-              coordination under high-dimensional visual observations, together with terrain-specific
-              multi-discriminator motion priors that preserve human-like behavior across scenes. Extensive
-              experiments show that SSR transfers safe, stable, and high-quality locomotion to diverse
+              coordinated, natural whole-body behaviors. We propose <strong>SSR</strong>, an efficient end-to-end framework
+              for egocentric vision-based humanoid traversal that jointly learns these capabilities.
+              SSR introduces <em>imagined foothold guidance</em>, which learns to model forthcoming swing-foot contacts
+              and support to guide pre-touchdown swings toward stable regions, reducing edge slips.
+              It further employs a compact <em>equivariant latent-space symmetry augmentation</em> to efficiently
+              induce bilateral coordination under high-dimensional visual observations, together with
+              <em>terrain-specific multi-discriminator motion priors</em> that preserve human-like behavior across scenes.
+              Extensive experiments show that SSR transfers safe, stable, and high-quality traversal to diverse
               real-world terrains, including stairs with varied structures, and to extreme challenges such
               as wide gaps and high platforms, while enabling reliable long-horizon traversal in open
               outdoor environments.
