@@ -141,7 +141,7 @@
                   </a>
                 </span>
                 <span class="link-block">
-                  <a href="#"
+                  <a href="https://youtu.be/thCaJvXeVTg"
                   class="external-link button is-normal is-rounded is-dark">
                     <span class="icon"><i class="fab fa-youtube"></i></span>
                     <span>YouTube</span>
@@ -184,7 +184,7 @@
     <div class="container">
       <div class="columns is-centered">
         <div class="column is-full-width is-centered has-text-centered">
-          <div style="max-width:1152px; margin:0 auto;">
+          <div style="max-width:1080px; margin:0 auto;">
             <div class="publication-video">
             <iframe src="https://www.youtube.com/embed/thCaJvXeVTg" title="3 Hours of Amazing Nature Scenery &amp; Relaxing Music" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
           </div>
@@ -195,6 +195,34 @@
   </section>
   <!-- End teaser video -->
 
+  <!-- Paper abstract -->
+  <section class="section hero">
+    <div class="container is-max-desktop content" style="max-width:1080px;">
+      <h2 class="title is-3 has-text-centered">Abstract</h2>
+      <div class="has-text-centered" style="margin-bottom: 1.5rem;">
+        <img src="static/images/Overview.png" alt="SSR Overview" style="max-width: 100%; height: auto;">
+      </div>
+      <div class="content has-text-justified">
+        <p style="line-height: 1.9;">
+          Extending humanoid traversal to open-world human environments is essential for real-world
+          deployment but remains challenging. The robot must use vision to ensure safe and reliable
+          foot placement on heterogeneous terrain under highly dynamic motion, while producing
+          coordinated, natural whole-body behaviors. We propose <strong>SSR</strong>, an efficient end-to-end
+          framework for egocentric vision-based humanoid traversal that jointly learns these
+          capabilities. SSR introduces <em style="color: #7030A0;">imagined foothold guidance</em>, which learns to model
+          forthcoming swing-foot contacts and support to guide pre-touchdown swings toward stable
+          regions, reducing edge slips. It further employs a compact <em style="color: #BF9000;">equivariant latent-space
+          symmetry augmentation</em> to efficiently induce bilateral coordination under high-dimensional
+          visual observations, together with <em style="color: #0094C8;">terrain-specific multi-discriminator motion priors</em>
+          that preserve human-like behavior across scenes. Extensive experiments show that SSR
+          achieves safe, stable, and high-quality locomotion on diverse real-world terrains, including
+          stairs with varied structures and extreme challenges such as wide gaps and high platforms,
+          while enabling reliable long-horizon traversal in open outdoor environments.
+        </p>
+      </div>
+    </div>
+  </section>
+  <!-- End paper abstract -->
 
   <!-- Video sections -->
 
@@ -456,45 +484,9 @@
   </section>
   <!-- End video sections -->
 
-
-  <!-- Paper abstract -->
-  <section class="section hero">
-    <div class="container is-max-desktop content">
-      <h2 class="title is-3 has-text-centered">Abstract</h2>
-      <div class="has-text-centered" style="margin-bottom: 1.5rem;">
-        <img src="static/images/Overview.png" alt="SSR Overview" style="max-width: 100%; height: auto;">
-      </div>
-      <div class="content has-text-justified">
-        <p style="line-height: 1.9;">
-          Extending humanoid traversal to open-world human environments is essential for real-world
-          deployment, yet remains challenging. The robot must rely on egocentric vision to achieve safe
-          and reliable foot placement on heterogeneous terrain under highly dynamic motion, while
-          maintaining coordinated and natural whole-body behaviors.
-        </p>
-        <p style="line-height: 1.9;">
-          To better address this problem, we propose <strong>SSR</strong>, an efficient end-to-end framework for
-          egocentric vision-based humanoid traversal. SSR introduces <b>imagined foothold guidance</b> to
-          model forthcoming swing-foot contacts and support regions, reducing edge slips by guiding
-          pre-touchdown swings toward stable areas. It further combines compact
-          <b>equivariant latent-space symmetry augmentation</b> with
-          <b>terrain-specific multi-discriminator motion priors</b> to improve bilateral coordination and
-          preserve human-like behaviors across diverse scenes.
-        </p>
-        <p style="line-height: 1.9;">
-          Extensive experiments show that SSR transfers safe, stable, and high-quality traversal to
-          diverse real-world terrains, including stairs with varied structures, wide gaps, and high
-          platforms. The learned policy further enables reliable long-horizon traversal in open outdoor
-          environments, demonstrating robust generalization beyond controlled laboratory settings.
-        </p>
-      </div>
-    </div>
-  </section>
-  <!-- End paper abstract -->
-
-
   <!-- BibTex citation -->
   <section class="section" id="BibTeX">
-    <div class="container is-max-desktop content">
+    <div class="container is-max-desktop content" style="max-width:1080px;">
       <div class="bibtex-header">
         <h2 class="title">BibTeX</h2>
         <button class="copy-bibtex-btn" onclick="copyBibTeX()" title="Copy BibTeX to clipboard">
